@@ -1,0 +1,73 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "name": "Data Structures & Algorithms",
+      "code": "CS101",
+      "credits": 4,
+      "gradeStatus": "passed"
+    },
+    {
+      "id": "2",
+      "name": "Web Development with Angular",
+      "code": "CS202",
+      "credits": 3,
+      "gradeStatus": "pending"
+    },
+    {
+      "id": "3",
+      "name": "Database Management Systems",
+      "code": "CS303",
+      "credits": 3,
+      "gradeStatus": "passed"
+    },
+    {
+      "id": "4",
+      "name": "Operating Systems & Networking",
+      "code": "CS404",
+      "credits": 4,
+      "gradeStatus": "failed"
+    },
+    {
+      "id": "5",
+      "name": "Software Engineering Principles",
+      "code": "CS505",
+      "credits": 2,
+      "gradeStatus": "pending"
+    }
+  ],
+  "students": [
+    {
+      "id": "101",
+      "name": "John Doe",
+      "email": "john.doe@university.edu",
+      "gpa": 3.8,
+      "enrolledCourseIds": [1, 2, 3]
+    },
+    {
+      "id": "102",
+      "name": "Jane Smith",
+      "email": "jane.smith@university.edu",
+      "gpa": 3.9,
+      "enrolledCourseIds": [1, 4]
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "1",
+      "studentName": "John Doe",
+      "studentEmail": "john.doe@university.edu",
+      "courseId": 1,
+      "preferredSemester": "Odd",
+      "agreeToTerms": true
+    },
+    {
+      "id": "2",
+      "studentName": "John Doe",
+      "studentEmail": "john.doe@university.edu",
+      "courseId": 2,
+      "preferredSemester": "Even",
+      "agreeToTerms": true
+    }
+  ]
+}

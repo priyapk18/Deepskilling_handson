@@ -1,0 +1,31 @@
+<div class="detail-container">
+  <a routerLink="/courses" class="back-link">← Back to Course Listing</a>
+
+  <div *ngIf="course; else notFound" class="detail-card">
+    <div class="header-row">
+      <span class="code-tag">{{ course.code }}</span>
+      <span class="status-badge" [class]="'badge-' + course.gradeStatus">{{ course.gradeStatus }}</span>
+    </div>
+
+    <h2>{{ course.name }}</h2>
+
+    <div class="meta-info">
+      <p>Course ID: <strong>{{ course.id }}</strong></p>
+      <p>Credits: <strong>{{ course.credits | creditLabel }}</strong></p>
+      <p>Department: <strong>Computer Science & Engineering</strong></p>
+    </div>
+
+    <div class="description-block">
+      <h3>Course Overview</h3>
+      <p>
+        This comprehensive course covers essential concepts, modern methodologies, and practical applications in {{ course.name }}. Designed for computer science majors seeking core mastery.
+      </p>
+    </div>
+  </div>
+
+  <ng-template #notFound>
+    <div class="not-found-block">
+      <p>Course with ID <strong>{{ courseId }}</strong> was not found.</p>
+    </div>
+  </ng-template>
+</div>

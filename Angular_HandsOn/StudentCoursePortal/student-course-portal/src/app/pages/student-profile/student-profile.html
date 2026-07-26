@@ -1,0 +1,36 @@
+<div class="profile-container">
+  <div class="profile-card">
+    <div class="avatar">👨‍🎓</div>
+    <h2>{{ student.name }}</h2>
+    <p class="email">{{ student.email }}</p>
+    <div class="info-grid">
+      <div class="info-item">
+        <span class="label">Student ID:</span>
+        <span class="value">{{ student.studentId }}</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Major:</span>
+        <span class="value">{{ student.major }}</span>
+      </div>
+      <div class="info-item">
+        <span class="label">GPA:</span>
+        <span class="value">{{ student.gpa }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hands-On 6 Step 66: Enrolled courses display -->
+  <div class="enrolled-section">
+    <h3>Enrolled Courses</h3>
+    <ul *ngIf="enrolledCourses.length > 0; else noEnrolled" class="enrolled-list">
+      <li *ngFor="let course of enrolledCourses" class="enrolled-item">
+        <span class="course-code">{{ course.code }}</span>
+        <span class="course-title">{{ course.name }}</span>
+        <span class="course-credits">{{ course.credits }} Credits</span>
+      </li>
+    </ul>
+    <ng-template #noEnrolled>
+      <p class="no-data">No courses currently enrolled.</p>
+    </ng-template>
+  </div>
+</div>

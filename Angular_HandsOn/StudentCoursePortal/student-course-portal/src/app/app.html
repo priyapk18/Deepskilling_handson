@@ -1,0 +1,13 @@
+<!-- Hands-On 1 Step 9: Root component header navigation -->
+<app-header></app-header>
+
+<!-- Hands-On 8 Step 91: Global HTTP Loading Spinner using async pipe -->
+<div *ngIf="loadingService.isLoading$ | async" class="global-spinner-overlay">
+  <div class="spinner"></div>
+</div>
+
+<main class="main-content">
+  <app-notification></app-notification>
+  <!-- Hands-On 1 Step 9: Router outlet for page navigation -->
+  <router-outlet></router-outlet>
+</main>

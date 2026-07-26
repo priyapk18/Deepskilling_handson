@@ -1,0 +1,48 @@
+<div class="course-list-container">
+  <h2>Available Courses</h2>
+
+  <!-- Hands-On 7 Step 71: Search Input updating query parameters -->
+  <div class="search-bar">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm" 
+      (ngModelChange)="onSearchChange()" 
+      placeholder="Filter courses by name or code..."
+      class="search-input"
+    />
+  </div>
+
+  <!-- Hands-On 8 Step 84: Error message display -->
+  <div *ngIf="errorMessage" class="error-banner">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Hands-On 3 Step 25: Loading indicator displayed when isLoading is true -->
+  <div *ngIf="isLoading" class="loading-state">
+    <p>Loading courses...</p>
+  </div>
+
+  <!-- Hands-On 3 Step 28: *ngIf with else template block -->
+  <div *ngIf="!isLoading">
+    <div *ngIf="filteredCourses.length > 0; else noCourses" class="courses-grid">
+      <!-- Hands-On 3 Step 26: *ngFor with trackBy optimization -->
+      <app-course-card 
+        *ngFor="let course of filteredCourses; let i = index; trackBy: trackByCourseId" 
+        [course]="course" 
+        (enrollRequested)="onEnroll($event)"
+      ></app-course-card>
+    </div>
+
+    <!-- Hands-On 3 Step 28: ng-template for empty courses list -->
+    <ng-template #noCourses>
+      <div class="no-courses">
+        <p>No courses available.</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <!-- Hands-On 2 Step 24: Selected course ID feedback paragraph -->
+  <p *ngIf="selectedCourseId" class="selected-feedback">
+    Selected course ID: <strong>{{ selectedCourseId }}</strong>
+  </p>
+</div>

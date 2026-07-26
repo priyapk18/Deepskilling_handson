@@ -1,0 +1,42 @@
+<div 
+  class="course-card" 
+  [ngClass]="cardClasses" 
+  [ngStyle]="{ 'border-left-color': borderColor }"
+  appHighlight="lightyellow"
+>
+  <div class="card-header">
+    <span class="course-code">{{ course.code }}</span>
+    
+    <!-- Hands-On 3 Step 27: *ngSwitch for grade status badge -->
+    <ng-container [ngSwitch]="course.gradeStatus">
+      <span *ngSwitchCase="'passed'" class="badge badge-passed">Passed</span>
+      <span *ngSwitchCase="'failed'" class="badge badge-failed">Failed</span>
+      <span *ngSwitchDefault class="badge badge-pending">Pending</span>
+    </ng-container>
+  </div>
+
+  <h3 class="course-name">{{ course.name }}</h3>
+
+  <!-- Hands-On 3 Step 36: Custom creditLabel pipe -->
+  <p class="course-credits">
+    Credits: <strong>{{ course.credits | creditLabel }}</strong>
+  </p>
+
+  <div *ngIf="isExpanded" class="expanded-details">
+    <p>Course ID: {{ course.id }}</p>
+    <p>Department: Computer Science</p>
+    <p>Status: {{ isEnrolled ? 'Enrolled in your schedule' : 'Available for registration' }}</p>
+  </div>
+
+  <div class="card-actions">
+    <!-- Hands-On 2 Step 21 & Hands-On 6 Step 65: Enroll button toggles state -->
+    <button (click)="onEnrollClick()" class="btn-enroll" [class.btn-unenroll]="isEnrolled">
+      {{ isEnrolled ? 'Unenroll' : 'Enroll' }}
+    </button>
+    
+    <!-- Hands-On 3 Step 31: Show Details button -->
+    <button (click)="toggleDetails()" class="btn-details">
+      {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+    </button>
+  </div>
+</div>

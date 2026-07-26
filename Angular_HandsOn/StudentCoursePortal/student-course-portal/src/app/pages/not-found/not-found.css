@@ -1,0 +1,39 @@
+.not-found-container {
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.error-code {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #ef4444;
+}
+
+h2 {
+  color: #1e293b;
+  margin-top: 0;
+}
+
+p {
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.btn-home {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-home:hover {
+  background-color: #1d4ed8;
+}
